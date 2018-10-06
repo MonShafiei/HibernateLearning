@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ir.university.hiber.model.entity">
+
+    <class name="CourseGroup" table="COURSE_GROUP">
+        <id name="id" column="COURSE_GROUP_ID">
+            <generator class="increment"/>
+        </id>
+        <property name="number" type="int" column="NUMBER"/>
+        <property name="capacity" type="int" column="CAPACITY" unique="false" not-null="false"/>         
+         
+        <many-to-one name="course" class="Course" column="CourseId" not-null="true" unique="false" />
+        
+        <set name="studentList" table="CourseGroup_Student"  inverse="true">
+        	<key column="COURSE_GROUP_ID" />
+        	<many-to-many class="Student" column="STUDENT_ID" />
+        </set>
+        
+    </class>
+
+</hibernate-mapping>
