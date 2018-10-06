@@ -23,7 +23,7 @@ public class Registeration implements CliInterface {
 
 	public Registeration(Integer codeCourse, Integer numberCourseGroup, Integer codeStudent) {
 		super();
-		this.codeCourse = codeCourse ;
+		this.codeCourse = codeCourse;
 		this.numberCourseGroup = numberCourseGroup;
 		this.codeStudent = codeStudent;
 	}
