@@ -21,11 +21,11 @@ public class Student extends Person {
 		this.dateOfPersent = dateOfPersent;
 	}
 
-	public Set<CourseGroup> getCourseGroupCollection() {
+	public Set<CourseGroup> getCourseGroups() {
 		return courseGroups;
 	}
 
-	public void setCourseGroupCollection(Set<CourseGroup> courseGroups) {
+	public void setCourseGroups(Set<CourseGroup> courseGroups) {
 		this.courseGroups = courseGroups;
 	}
 

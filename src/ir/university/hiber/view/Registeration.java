@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import org.hibernate.Session;
 
-import com.sun.javafx.scene.control.skin.TreeTableRowSkin;
 
 import ir.university.hiber.core.HibernateUtil;
 import ir.university.hiber.model.entity.Course;
@@ -56,14 +55,14 @@ public class Registeration implements CliInterface {
 			throw new Exception("Capacity is overload");
 		}
 
-		for (CourseGroup itemOfStudent : student.getCourseGroupCollection()) {
+		for (CourseGroup itemOfStudent : student.getCourseGroups()) {
 			if (itemOfStudent.getCourse().getCode() == course.getCode()) {
 				throw new Exception("This course is taken");
 			}
 		}
 		// checkDuplicateCourse();
 
-		student.getCourseGroupCollection().add(courseGroup);
+		student.getCourseGroups().add(courseGroup);
 		session.update(student);
 		session.getTransaction().commit();
 

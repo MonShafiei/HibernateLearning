@@ -68,8 +68,8 @@ public class CourseGroup {
 		this.presentTime = presentTime;
 	}
 
-	public void setStudentList(Set<Student> studentList) {
-		this.students = studentList;
+	public void setStudents(Set<Student> students) {
+		this.students = students;
 	}
 	
 	

@@ -155,13 +155,13 @@ public class StudentCli implements CliInterface {
 					.setParameter("v", nameCourseGroup).uniqueResult();
 			boolean hasCourseGroup = false;
 			student.registerCourseGroups();
-			for (CourseGroup item : student.getCourseGroupCollection()) {
+			for (CourseGroup item : student.getCourseGroups()) {
 //				if (item.getName().equals(courseGroup.getName())) {
 //					hasCourseGroup = true;
 //				}
 			}
 			if (!hasCourseGroup) {
-				student.getCourseGroupCollection().add(courseGroup);
+				student.getCourseGroups().add(courseGroup);
 				session.update(student);
 				session.getTransaction().commit();
 			}

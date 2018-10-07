@@ -14,7 +14,7 @@
          
         <many-to-one name="course" class="Course" column="CourseId" not-null="true" unique="false" />
         
-        <set name="studentList" table="CourseGroup_Student"  inverse="true">
+        <set name="students" table="CourseGroup_Student"  inverse="true">
         	<key column="COURSE_GROUP_ID" />
         	<many-to-many class="Student" column="STUDENT_ID" />
         </set>

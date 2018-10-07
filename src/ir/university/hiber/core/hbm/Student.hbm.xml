@@ -13,7 +13,7 @@
 		<property name="code" type="int" column="CODE" unique="false"
 			not-null="false" />	
 	
-	<set name="courseGroupList" table="CourseGroup_Student" >
+	<set name="courseGroups" table="CourseGroup_Student" >
 		<key column="STUDENT_ID" />
 		<many-to-many class="CourseGroup" column="COURSE_GROUP_ID" />
 	</set>
